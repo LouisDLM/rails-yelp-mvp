@@ -1,0 +1,27 @@
+<div class="text-center">
+  <h1>All your Restaurants</h1>
+    <% @restaurants.each do |restaurant| %>
+      <h2><%= link_to restaurant.name, restaurant_path(restaurant.id) %></h2>
+      <ul class="list table">
+        <li>Name: <%= restaurant.name %></li>
+        <li>Address: <%= restaurant.address %></li>
+        <li>Category: <%= restaurant.category %></li>
+        <li>Phone number: <%= restaurant.phone_number %></li>
+
+        <%= link_to "Remove restaurant", restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%>
+        <%= link_to 'Reviews', new_restaurant_path %>
+      </ul>
+    <% end %>
+
+  <%= link_to 'New Restaurant', new_restaurant_path %>
+
+</div>
+
+
+
+
+
+
+
+
+
